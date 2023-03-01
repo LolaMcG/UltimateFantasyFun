@@ -1,3 +1,4 @@
+import characters.Enemy;
 import characters.Warrior;
 import items.Armour;
 import items.Weapon;
@@ -19,6 +20,8 @@ public class WarriorTest {
     Armour leather;
     Armour chainmail;
     Armour iron;
+
+    Enemy orc;
     
     @Before
     public void before(){
@@ -31,6 +34,7 @@ public class WarriorTest {
         iron = new Armour("Iron", 20);
         chainmail = new Armour("Chainmail", 40);
         warrior = new Warrior( "Knight", 1000);
+        orc = new Enemy("Orc", 500, club);
     }
 
     @Test
@@ -75,6 +79,14 @@ public class WarriorTest {
     public void can_receive_damage(){
         warrior.receiveDamage(axe);
         assertEquals(990, warrior.getHealth());
+    }
+
+    @Test
+    public void can_attack(){
+        warrior.addWeapon(sword);
+        warrior.selectWeapon(sword);
+        warrior.attack(orc);
+        assertEquals(450, orc.getHealth());
     }
 
 

@@ -1,8 +1,9 @@
 package characters;
 
 import Interfaces.IDamage;
+import Interfaces.IDamageable;
 
-public abstract class Character {
+public abstract class Character implements IDamageable {
 
     private String name;
     private int health;
@@ -23,4 +24,8 @@ public abstract class Character {
         health -= pointsToReduceBy;
     }
 
+
+    public void attack(Character defender) {
+        
+    }
 }
