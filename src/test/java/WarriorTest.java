@@ -71,5 +71,14 @@ public class WarriorTest {
         assertEquals("Axe", warrior.getSelectedWeapon());
     }
 
+    @Test
+    public void can_receive_damage(){
+        warrior.receiveDamage(axe);
+        assertEquals(990, warrior.getHealth());
+    }
+
+
+
+
 
 }

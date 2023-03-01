@@ -12,8 +12,8 @@ public class Weapon implements IDamage {
         this.damagePoints = damagePoints;
     }
 
-    public void causeDamage(){
-
+    public int causeDamage(){
+       return damagePoints;
     }
 
     public String getWeaponType() {

@@ -1,11 +1,13 @@
 package characters;
 
+import Interfaces.IDamage;
+import Interfaces.IDamageable;
 import items.Armour;
 import items.Weapon;
 
 import java.util.ArrayList;
 
-public class Warrior extends PlayableCharacter {
+public class Warrior extends PlayableCharacter implements IDamageable {
 
     private ArrayList<Weapon> weaponsCollection;
     private Weapon selectedWeapon;
@@ -51,4 +53,9 @@ public class Warrior extends PlayableCharacter {
     public String getSelectedWeapon() {
         return selectedWeapon.getWeaponType();
     }
+
+
+
+
+
 }
